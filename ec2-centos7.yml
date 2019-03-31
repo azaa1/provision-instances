@@ -1,0 +1,14 @@
+---
+  - name: Provision CentOS7 EC2
+    hosts: localhost
+    tasks:
+      - name: Provision CentOS7
+        ec2:
+          aws_region: us-east-2
+          image: ami-0f2b4fc905b0bd1f1
+          instance_type: t2.micro
+          count: 1
+          vpc_subnet_id: subnet-c10697bb
+          assign_public_ip: yes
+          group: default
+          key_name: MyMacKey
